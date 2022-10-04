@@ -1,5 +1,7 @@
 // programmer name: Luis Rodriguez
-// program use: Loading each work members bio's without having to go to a new page.
+
+// program use: This progam will be Loading each work members bio's without having to go to a new page.
+
 // date: Oct 04 2022
 
 $(document).ready(function() {      // starting the main function  

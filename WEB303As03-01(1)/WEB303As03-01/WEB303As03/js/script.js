@@ -16,9 +16,12 @@ function ajaxCallFunction(){     // function for the ajax
               
     $.ajax({      // variable for ajax
                 url: 'team.json',       // file in folder URL                                       
-                method: 'GET',      // Getting the team.json file                                           
-                dataType: 'json',    // type of data being GET                                        
-                beforeSend: function(){   // before starting the main function                                   
+                
+				method: 'GET',      // Getting the team.json file                                           
+                
+				dataType: 'json',    // type of data being GET                                        
+                
+				beforeSend: function(){   // before starting the main function                                   
                         $('#team').append('<h2 id="load">Loading...</h2>').hide(2000);  // loading comes on to bring in the #team div in 2 seconds
                 },                                                              
                     
@@ -44,13 +47,20 @@ function ajaxCallFunction(){     // function for the ajax
                     }}
 )};
 
+
 function jsonCallFunction(){  // function for JSON     
 	
-    $.getJSON("team.json", function(team) {                     
-        $.each(team.workmembers, function() {                   
-            $("#team").append("<h2>"+this['name']+"</h2><h5>"      // . append will insert the name , position, and bio into the json call function
-                                    +this['position']+ "</h5><p>"
-                                    +this['bio']+"</p>");
+    
+	$.getJSON("team.json", function(team) {                     
+        
+		$.each(team.workmembers, function() {                   
             
-        }                             
+			$("#team").append("<h2>"+this['name']+"</h2><h5>"      // . append will insert the name , position, and bio into the json call function
+                                    
+									+this['position']+ "</h5><p>"
+                                    
+									+this['bio']+"</p>");
+            
+        }
+		
     )})};  // closing
